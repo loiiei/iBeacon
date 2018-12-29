@@ -129,20 +129,11 @@ public class MainActivity extends Activity implements BeaconConsumer {
         }
     }
 
-    public void showIBeacon(Beacon beacon)
-    {
+    public void showIBeacon(Beacon beacon) {
         Intent viewIntent = new Intent(this, ShowBeacon.class);
         viewIntent.putExtra(BEACON_EXTRA, (Serializable) beacon);
         this.startActivity(viewIntent);
     }
-  /*  public void isBluetoothEnabled() {
-        BluetoothManager bluetoothManager = (BluetoothManager) getSystemService(BLUETOOTH_SERVICE);
-        BluetoothAdapter bluetoothAdapter = bluetoothManager.getAdapter();
-        if (bluetoothAdapter == null || !bluetoothAdapter.isEnabled()) {
-            Intent i = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(i, REQUEST_ENABLE_BT);
-        }
-    }*/
 
     @Override
     protected void onResume() {

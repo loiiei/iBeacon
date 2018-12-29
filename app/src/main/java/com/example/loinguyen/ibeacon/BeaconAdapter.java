@@ -33,15 +33,6 @@ public class BeaconAdapter extends BaseAdapter {
         this.beacons.clear();
         this.beacons.addAll(newBeacons);
         notifyDataSetChanged();
-        /*Collections.sort(this.beacons, new Comparator<Beacon>() {
-            @Override
-            public int compare(Beacon b1, Beacon b2) {
-                String mac1 = b1.getBluetoothAddress();
-                String mac2 = b2.getBluetoothAddress();
-
-                return mac1.compareTo(mac2);
-            }
-        });*/
         Collections.sort(this.beacons, new Comparator<Beacon>() {
             @Override
             public int compare(Beacon b1, Beacon b2) {
