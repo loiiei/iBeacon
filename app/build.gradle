@@ -27,4 +27,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'org.altbeacon:android-beacon-library:2.12'
     implementation 'com.estimote:sdk:1.0.3:release@aar'
+    implementation 'com.opencsv:opencsv:4.4'
 }

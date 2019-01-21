@@ -1,4 +1,4 @@
-package com.example.loinguyen.ibeacon;
+package com.example.loinguyen.ibeacon.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,7 +7,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.loinguyen.ibeacon.R;
+
 import org.altbeacon.beacon.Beacon;
+import org.altbeacon.beacon.Identifier;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -31,7 +34,22 @@ public class BeaconAdapter extends BaseAdapter {
 
     public void initAll(Collection<Beacon> newBeacons){
         this.beacons.clear();
-        this.beacons.addAll(newBeacons);
+        for (final Beacon beacon : newBeacons) {
+            if(beacon.getId2().equals(Identifier.parse("36616"))
+                    ) {
+                this.beacons.add(beacon); }
+            else if(beacon.getId2().equals(Identifier.parse("64882"))) {
+                this.beacons.add(beacon);
+            }
+            if(beacon.getId2().equals(Identifier.parse("16751"))) {
+                this.beacons.add(beacon);
+            }
+            else
+            if(beacon.getId2().equals(Identifier.parse("7503"))) {
+                this.beacons.add(beacon);
+            }
+        }
+        //this.beacons.addAll(newBeacons);
         notifyDataSetChanged();
         Collections.sort(this.beacons, new Comparator<Beacon>() {
             @Override
@@ -41,6 +59,10 @@ public class BeaconAdapter extends BaseAdapter {
                 return rssi1 > rssi2 ? -1 : 1;
             }
         });
+
+        for(Beacon beacon: newBeacons){
+
+        }
     }
 
     @Override
