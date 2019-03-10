@@ -122,14 +122,14 @@ public class MainActivity extends Activity implements BeaconConsumer {
 
 
         beaconManager.addMonitorNotifier(new MonitorNotifier() {
-            @Override
-            public void didEnterRegion(Region region) {
-                try {
-                    Log.d(TAG, "Beacon Just Detected" + region.getUniqueId());
-                    beaconManager.startRangingBeaconsInRegion(region);
-                } catch (RemoteException e) {
-                    e.printStackTrace();
-                }
+                    @Override
+                    public void didEnterRegion(Region region) {
+                        try {
+                            Log.d(TAG, "Beacon Just Detected" + region.getUniqueId());
+                            beaconManager.startRangingBeaconsInRegion(region);
+                        } catch (RemoteException e) {
+                            e.printStackTrace();
+                        }
             }
 
             @Override
